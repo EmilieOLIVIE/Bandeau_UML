@@ -13,6 +13,9 @@ public class UtilisationClasses {
 
     public void exemple() {
         Bandeau monBandeau = new Bandeau();
+        Font font = monBandeau.getFont();
+        Color back = monBandeau.getBackground();
+        Color fore = monBandeau.getForeground();
         
         monBandeau.setMessage("Hello");
         monBandeau.sleep(1000);
@@ -34,11 +37,18 @@ public class UtilisationClasses {
         monEffet.seJouerSur(monBandeau);
 
         monBandeau.setMessage("On va changer de couleur de fond");
-        monBandeau.sleep(1000);
-        monBandeau.setBackground(Color.DARK_GRAY);
         monEffet = new ChangerFond();
         monEffet.seJouerSur(monBandeau);
+        monBandeau.sleep(1000);
         
+        monBandeau.setMessage("On va changer de couleur");
+        monEffet = new ChangerCouleur();
+        monEffet.seJouerSur(monBandeau);
+        monBandeau.sleep(1000);
+
+        monBandeau.setFont(font);
+        monBandeau.setForeground(fore);
+        monBandeau.setBackground(back);
         monBandeau.setMessage("Terminé");
         monBandeau.sleep(3000);
         monBandeau.close();
